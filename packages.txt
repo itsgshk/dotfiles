@@ -1,0 +1,67 @@
+# ==========================================================
+# packages.txt — устанавливается через: yay -S --needed - < packages.txt
+# Строки с # и пустые строки игнорируются install.sh
+# ==========================================================
+
+## --- Core Hyprland stack ---
+hyprland
+xdg-desktop-portal-hyprland
+polkit-kde-agent
+qt5-wayland
+qt6-wayland
+
+## --- Terminal / launcher / bar / notifications ---
+kitty
+rofi
+waybar
+swaync
+swww
+xsettingsd
+dolphin
+
+## --- Shell / editor ---
+zsh
+neovim
+git
+base-devel
+
+## --- Screenshots ---
+hyprshot
+
+## --- Audio / media / brightness (используются в keybindings.conf) ---
+pipewire
+pipewire-pulse
+wireplumber
+playerctl
+brightnessctl
+
+## --- Bluetooth / network (нужны waybar-модулям bluetooth/network) ---
+bluez
+bluez-utils
+blueman
+networkmanager
+network-manager-applet
+
+## --- Fonts / icons (используются в kitty.conf и rofi config.rasi) ---
+ttf-jetbrains-mono-nerd
+noto-fonts
+noto-fonts-emoji
+papirus-icon-theme
+
+## --- Браузер ---
+firefox
+
+## --- Greeter для автологина в Hyprland ---
+greetd
+greetd-tuigreet
+
+## --- NVIDIA open driver (у тебя RTX 3060 — проприетарные модули с открытым ядром) ---
+nvidia-open-dkms
+nvidia-utils
+lib32-nvidia-utils
+linux-headers
+
+# ЗАМЕЧЕНИЕ: в keybindings.conf есть бинды на emacs и spicetify —
+# они закомментированы ниже, раскомментируй если реально используешь.
+#emacs
+#spicetify-cli

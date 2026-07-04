@@ -1,0 +1,107 @@
+@import 'colors/one-dark.css';
+
+*{
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar{
+    background-color: black;
+}
+
+.modules-left{
+    margin-left: 12px;
+}
+
+.modules-right{
+    margin-right: 12px;
+}
+
+tooltip{
+    background-color: @bg0;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+tootip label {
+    color: @fg;
+    padding: 6px;
+}
+
+#workspaces{
+    background-color: @bg0;
+    padding: 5px 3px;
+    margin: 0;
+    border-radius: 18px;
+    border: 1px solid black;
+    color: @fg;
+}
+
+#workspaces button{
+    padding: 0px 6px;
+    margin: 0px 3px;
+    border-radius: 60px;
+    color: @fg;
+    background-color: @bg0;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active{
+    background-color: @fg;
+    color: @bg0;
+    min-width: 30px;
+    transition: all 0.3s ease-in-out;
+    font-size: 13px;
+}
+
+#workspaces button:hover{
+    background-color: @fg;
+    color: @bg0;
+    min-width: 50px;
+}
+
+#workspaces button.urgent{
+    background-color: @red;
+    color: @bg0;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+#battery,
+#pulseaudio,
+#bluetooth,
+#network{
+    background-color: @bg0;
+    padding: 0;
+    margin: 0 12px 0 0;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+#clock{
+    color: @fg;
+}
+
+
+#pulseaudio{
+    color: @fg;
+}
+
+#bluetooth{
+    color: @fg;
+}
+
+#network{
+    color: @fg
+}
+
+#battery{
+    color: @fg;
+}
