@@ -1,6 +1,7 @@
 {
     "position": "top",
-    "margin-top": 0,
+    "margin-top": 6,
+    "spacing": 4,
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -8,10 +9,12 @@
         "clock"
     ],
     "modules-right": [
+        "cpu",
+        "memory",
         "pulseaudio",
         "network",
         "bluetooth",
-        "battery"
+        "tray"
     ],
     "clock": {
         "interval": 60,
@@ -22,85 +25,66 @@
         "format": "{name}",
         "on-click": "activate",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "active": "",
-            "default": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
         "sort-by-number": true
     },
     "tray": {
         "icon-size": 15,
-        "spacing": 10,
-        "icons": {
-            "blueman": "bluetooth",
-            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        }
+        "spacing": 10
+    },
+    "cpu": {
+        "interval": 3,
+        "format": " {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "interval": 3,
+        "format": " {percentage}%",
+        "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% ",
-        "format-muted": "",
+        "format-bluetooth": "{volume}% ",
+        "format-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                ""
-            ]
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
         },
         "scroll-step": 1,
         "on-click": "pavucontrol",
-        "ignored-sinks": [
-            "Easy Effects Sink"
-        ]
+        "ignored-sinks": ["Easy Effects Sink"]
     },
     "network": {
-        "interface": "wlan0",
-        "format": "{ifname}",
-        "format-wifi": "",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ipaddr}/{cidr}",
+        "format-disconnected": "",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-	"on-click": "kitty -e nmtui"
+        "on-click": "kitty -e nmtui"
     },
     "bluetooth": {
-        "controller": "Controller 4C:77:CB:1F:0E:40", // specify the alias of the controller if there are more than 1 on the system
-        "format": "",
-        "format-disabled": "", // an empty format will hide the module
-        "format-connected": " {num_connections}",
+        "format": "",
+        "format-disabled": "",
+        "format-connected": " {num_connections}",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "blueman-manager"
-    },
-    "battery": {
-        "interval": 60,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "max-length": 25
     }
 }
